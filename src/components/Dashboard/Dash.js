@@ -24,7 +24,7 @@ const DashboardTabContent = () => {
             }
         };
 
-        fetchUserData();
+        // fetchUserData();
     }, []);
 
     if (!userData) {

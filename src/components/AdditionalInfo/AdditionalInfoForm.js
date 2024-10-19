@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { setDoc, doc } from 'firebase/firestore';
+// import { setDoc, doc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
-import { auth, db } from '../../firebaseConfig';
+import { auth } from '../../firebaseConfig';
 import './additionalinfoform.css';
+import { getDatabase, ref, set } from "firebase/database";
 
 const AdditionalInfoForm = () => {
     const [error, setError] = useState('');
@@ -10,33 +11,38 @@ const AdditionalInfoForm = () => {
         firstName: '', lastName: '', nationality: '', parentEmail: '', parentPhone: '', parentName: '', dob: '', middleName: '', stateOfOrigin: ''
     });
     const navigate = useNavigate();
+    const userId = auth.currentUser?.uid;
+
+    const writeUserData = () => {
+        const db = getDatabase();
+        set(ref(db, 'users/' + userId), {
+            firstName,
+            middleName,
+            lastName,
+            dob,
+            stateOfOrigin,
+            nationality,
+            parentName,
+            parentPhone,
+            parentEmail,
+        })};
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const userId = auth.currentUser?.uid;
 
         if (!userId) {
             setError('No authenticated user found!');
             return;
         }
-
+           
         try {
-            await setDoc(doc(db, 'users', userId), {
-                firstName,
-                middleName,
-                lastName,
-                dob,
-                stateOfOrigin,
-                nationality,
-                parentName,
-                parentPhone,
-                parentEmail,
-            });
-
-            console.log('Info saved successfully!');
-
-            navigate('/dashboard');
-        } catch (err) {
+            const Response = await writeUserData(userId)
+            // navigate('/dashboard');
+            console.log({Response})
+            
+            }
+ 
+         catch (err) {
             setError(err.message);
         }
     };
