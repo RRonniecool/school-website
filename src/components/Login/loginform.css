@@ -1,0 +1,122 @@
+.login-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.school-logo{
+    width: 20%;
+    height: 20%;
+    align-self: center;
+    margin-bottom: 0;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    padding: 0.4rem 0.5rem;
+    padding-bottom: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.image-div a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form h2 {
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
+    color: black;
+}
+
+.login-form h2 span{
+    color:#FFEA00;
+    font-weight: bold;
+    background-color: #0B0B33;
+    padding: 0 0.3rem;
+    border-radius: 5px;
+    margin: 0;
+}
+
+
+.login-form p{
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+.login-form form div {
+    margin-bottom: 0.5rem;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 3px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.page-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-button > button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0B0B33;
+    color: #FFEA00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.signup-text {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.signup-button {
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.signup-button:hover {
+    background-color: #0056b3;
+}
+

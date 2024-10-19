@@ -1,0 +1,91 @@
+.appointment-container{
+    display: flex;
+    justify-content: center;
+    padding: 0 3rem;
+}
+
+.form{
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #0B0B33;
+    height: auto;
+    min-width: 40%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form > h1{
+    color: white;
+
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 0.625rem;
+    margin-bottom: 0.5rem;
+    border: 0.0625rem solid #b2dfdb;
+    border-radius: 0.3125rem;
+    box-sizing: border-box;
+}
+
+.styled-textarea {
+    width: 100%; 
+    padding: 0.625rem; 
+    margin-bottom: 0.5rem; 
+    border: 0.0625rem solid #b2dfdb; 
+    border-radius: 0.3125rem; 
+    box-sizing: border-box; 
+    height: 205px; 
+    resize: vertical; 
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 16px;
+}
+
+  
+.styled-textarea:focus {
+    border-color: #4caf50; 
+    box-shadow: 0px 4px 6px rgba(76, 175, 80, 0.3); 
+}
+
+.appointment-container div:last-child{
+    min-width: 60%;
+}
+  
+
+.image{
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.appoint-button{
+    text-align: center;
+}
+
+.appoint-button > button{
+    padding: 0.5rem 6.5rem; 
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: none;
+    background-color: #FFEA00;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .appointment-container{
+        flex-direction: column;
+        padding: 0.2rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .styled-textarea{
+        max-height: 150px;
+    }
+
+ 
+}

@@ -1,0 +1,14 @@
+
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff; /* Optional: background color during loading */
+  }
+  
+  .loader img {
+    width: 100px; /* Adjust size as needed */
+  }
+  

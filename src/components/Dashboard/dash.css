@@ -1,0 +1,139 @@
+
+.page {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.tab-container{
+    display: flex;
+    gap: 4em;
+    height: 100%;
+}
+
+.buttons{
+    display: flex;
+    gap: 0.8em;
+    flex-direction: column;
+    background-color: #3f3278;
+    width: 120px;
+}
+
+.buttons > button {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    height: 40px;
+    padding: 0 12px;
+    background: none;
+    border-radius: 6px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-family: inherit;
+    cursor: pointer;
+    color: inherit;
+}
+
+.buttons > button:nth-last-child(1){
+    margin-top: 8rem;
+}
+
+.buttons button:hover {
+    background-color: rgb(255, 255, 255, 0.1);
+}
+
+.buttons button.active {
+    background: black;
+    color: #f9f9f9;
+}
+
+.wrapper{
+    flex-grow: 1;
+    background-color: green;
+    min-height: 400px;
+    padding: 1rem;
+}
+  
+.content {
+    transition: 0.6s;
+    border: 3px solid grey;
+    background-color: grey;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}
+  
+.content p {
+    display: flex;
+    align-items: center;
+    line-height: 13px;
+    font-size: 13px;
+    margin: 0;
+    opacity: 0.5;
+}
+  
+.block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    background-color: red;
+    width: 100%;
+    height: auto;
+}
+
+
+.result-content > button {
+    padding: 10px 15px;
+    margin: 5px;
+    background-color: #6c9711;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.result-content > button.active {
+    background-color: #444;
+}
+
+.result-content > button:hover {
+    background-color: #5a8b0f;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #6c9711;
+    color: white;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(even) td {
+    background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+  
+
+    
+
+    
+}
