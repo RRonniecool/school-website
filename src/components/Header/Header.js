@@ -17,7 +17,7 @@ const Header = () => {
       {/* School Info Section */}
       <div className="school-info">
         <p><span><FaPhoneAlt /></span>+2349056819035</p>
-        <p><span><FaEnvelope /></span>info.jesussecsch@gmail.com</p>
+        <p><span><FaEnvelope /></span>info.jesuschildrenschool@gmail.com</p>
         <p><span><FaClock /></span>School Time: 08:00am - 2:00pm</p>
       </div>
 
@@ -39,7 +39,7 @@ const Header = () => {
               <span><FaEnvelope /></span>
               <div>
                 <p>Send an Email</p>
-                <small>info.jesussecsch@gmail.com</small>
+                <small>info.jesuschildrenschool@gmail.com</small>
               </div>
             </div>
             <div className="info">

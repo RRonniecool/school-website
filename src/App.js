@@ -7,7 +7,8 @@ import AdditionalInfoForm from './components/AdditionalInfo/AdditionalInfoForm';
 import Gallery from './components/Gallery/Gallery'
 import AboutUs from './components/AboutUs/AboutUs'
 import ContactUs from './components/Appointment/Appointment'
-import Dashboard from './components/Dashboard/Dash'
+import { Widget as Dashboard } from './components/Dashboard/Dash'
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -17,7 +18,11 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
-          <Route path="/additional-info" element={<AdditionalInfoForm />} />
+          <Route path="/additional-info" element={
+          <ProtectedRoute>
+            <AdditionalInfoForm />
+          </ProtectedRoute>
+        } />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="*" element={<HomePage />} /> 

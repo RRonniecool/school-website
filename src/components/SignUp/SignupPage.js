@@ -92,7 +92,7 @@ const SignUpPage = () => {
                             onChange={(e) => setEmail(e.target.value)}
                             required
                         />
-                        {emailError && <p style={{ color: 'red', fontSize: '12px' }}>{emailError}</p>} {/* Email error displayed here */}
+                        {emailError && <p style={{ color: 'red', fontSize: '12px' }}>{emailError}</p>} 
                     </div>
                     <div>
                         <label>Password</label>
@@ -132,5 +132,7 @@ const SignUpPage = () => {
         </div>
     );
 };
+
+localStorage.setItem('isSignupComplete', true);
 
 export default SignUpPage;

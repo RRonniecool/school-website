@@ -9,7 +9,7 @@ const Footer = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const response = await fetch('https://formspree.io/f/xbljjeeo', {
+        const response = await fetch('https://formspree.io/f/myzyzjgg', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -19,7 +19,7 @@ const Footer = () => {
 
         if (response.ok) {
             alert('Thank you for subscribing to our newsletter!');
-            setEmail('');  // Clear the input field after successful submission
+            setEmail('');  
         } else {
             alert('There was an issue with the subscription. Please try again.');
         }
@@ -32,7 +32,7 @@ const Footer = () => {
                     <h3>Get In Touch</h3>
                     <p><FaMapMarkerAlt /> Umuchima Ihiagwa, Owerri West, Imo State</p>
                     <p><FaPhoneAlt /> +234 534 2342 344</p>
-                    <p><FaEnvelope /> info.jesussecsch@gmail.com</p>
+                    <p><FaEnvelope /> info.jesuschildrenschool@gmail.com</p>
                 </div>
 
                 <div className='footer-section'>
