@@ -104,6 +104,10 @@
 
 @media (max-width: 768px) {
 .footer-container{
-    padding: 0.5rem 1.7rem;
-}   
+    padding: 0.5rem 1rem;
+}
+
+.newsletter-form{
+    min-width: 110px;
+}
 }
