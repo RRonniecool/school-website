@@ -161,6 +161,11 @@
     .about-card {
         flex-basis: 100%;
         max-width: 100%;
+        padding: 0 0.3rem;
+    }
+
+    .cards-container{
+        padding: 0 0.5rem;
     }
 }
 
