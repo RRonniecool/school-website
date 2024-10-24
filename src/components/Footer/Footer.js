@@ -31,7 +31,7 @@ const Footer = () => {
                 <div className='footer-section'>
                     <h3>Get In Touch</h3>
                     <p><FaMapMarkerAlt /> Umuchima Ihiagwa, Owerri West, Imo State</p>
-                    <p><FaPhoneAlt /> +234 534 2342 344</p>
+                    <p><FaPhoneAlt /> +2349013602041</p>
                     <p><FaEnvelope /> info.jesuschildrenschool@gmail.com</p>
                 </div>
 
@@ -63,7 +63,7 @@ const Footer = () => {
             </div>
 
             <div className='footer-bottom'>
-                <p>&copy; 2024 Jesus Children Academy. All rights reserved.</p>
+                <p>&copy; 2024 Jesus Children School. All rights reserved.</p>
             </div>
         </div>
     );

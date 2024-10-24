@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './header.css';
 import logo from '../../images/logo.png';
+import PrimaryLogo from '../../images/PrimarySchLogo.png';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock, FaExternalLinkAlt, FaBars, FaTimes } from 'react-icons/fa';
 
 const Header = () => {
@@ -16,7 +17,7 @@ const Header = () => {
     <header>
       {/* School Info Section */}
       <div className="school-info">
-        <p><span><FaPhoneAlt /></span>+2349056819035</p>
+        <p><span><FaPhoneAlt /></span>+2349013602041</p>
         <p><span><FaEnvelope /></span>info.jesuschildrenschool@gmail.com</p>
         <p><span><FaClock /></span>School Time: 08:00am - 2:00pm</p>
       </div>
@@ -25,6 +26,7 @@ const Header = () => {
       <div className="school-personal-info">
         <div className="logo-container">
           <img src={logo} alt="School Logo" className="header-logo" />
+          <img src={PrimaryLogo} alt="School Logo" className="header-logo" />
           <p>JSc OWERRI</p>
 
           <div className="info-container">
@@ -32,7 +34,7 @@ const Header = () => {
               <span><FaPhoneAlt /></span>
               <div>
                 <p>Call Now</p>
-                <small>+2349056819035</small>
+                <small>+2349013602041</small>
               </div>
             </div>
             <div className="info">

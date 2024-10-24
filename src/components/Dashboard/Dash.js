@@ -31,7 +31,7 @@ const DashboardTabContent = ({ userData }) => {
     return (
         <div className='student-info'>
             <div>
-                <h3>Student Info:</h3>
+                <h3>Student Information</h3>
                 <p>Full Name: {`${userData.firstName || ''} ${userData.middleName || ''} ${userData.lastName || ''}`}</p>
                 <p>Date of Birth: {userData.dob || 'N/A'}</p>
                 <p>Nationality: {userData.nationality || 'N/A'}</p>
@@ -40,7 +40,7 @@ const DashboardTabContent = ({ userData }) => {
                 <p>Class: {userData.class || 'N/A'}</p>
             </div>
             <div>
-                <h3>Parents/Guardian Details:</h3>
+                <h3>Parents/Guardian Details</h3>
                 <p>Full Name: {userData.parentName || 'N/A'}</p>
                 <p style={{ textTransform: 'none' }}>Email: {userData.parentEmail || 'N/A'}</p>
                 <p>Phone Number: {userData.parentPhone || 'N/A'}</p>

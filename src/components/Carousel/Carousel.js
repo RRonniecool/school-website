@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 import './carousel.css';
 import slide1 from '../../images/slide1.jpg';
-import slide2 from '../../images/slide2.jpg';
+import slide2 from '../../images/nursery.jpg';
 import slide3 from '../../images/slide3.jpg';
 
 const Carousel = () => {
