@@ -1,0 +1,59 @@
+/* School Fees Section Styles */
+.school-fees-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+}
+
+h2, h3 {
+    color: #333;
+}
+
+.button-group {
+    margin-bottom: 15px;
+}
+
+.tab-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.tab-btn:hover {
+    background-color: #0056b3;
+}
+
+.content-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.summary-section p,
+.details-section li {
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+.pay-now-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.pay-now-btn:hover {
+    background-color: #218838;
+}

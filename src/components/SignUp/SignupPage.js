@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';  // For redirecting
+import { useNavigate, Link } from 'react-router-dom';  
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; 
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'; // Import Firebase Auth
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'; 
 import './signuppage.css';
 import logo from '../../images/logo.png';
 
@@ -15,8 +15,7 @@ const SignUpPage = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-    const navigate = useNavigate();  // Initialize useNavigate for redirection
-
+    const navigate = useNavigate();  
     const handleSignUp = (e) => {
         e.preventDefault();
 
@@ -42,18 +41,18 @@ const SignUpPage = () => {
             valid = false;
         }
 
-        if (!valid) return;  // If validation fails, do not proceed
+        if (!valid) return;  
 
-        const auth = getAuth();  // Initialize Firebase Auth
+        const auth = getAuth();  
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                // Signed in successfully
+              
                 console.log("User signed up:", userCredential.user);
-                navigate('/additional-info');  // Redirect to additional information page
+                navigate('/additional-info');  
             })
             .catch((err) => {
-                // Handle errors
-                setEmailError(err.message);  // Display Firebase-specific error if signup fails
+                
+                setEmailError(err.message); 
             });
     };
 
@@ -81,8 +80,10 @@ const SignUpPage = () => {
                 <form onSubmit={handleSignUp}>
                     <div>
                         <div className='mobile-logo'>
-                            <img src={logo} alt="School Logo" className='school-logo' />
-                            <p>School Information Management System</p>
+                        <Link to="/">
+                        <img src={logo} alt="School Logo" className='school-logo' />
+                        </Link>   
+                        <p>School Information Management System</p>
                         </div>
                         <h2>Sign <span>Up</span> </h2>
                         <label>Email</label>
@@ -107,7 +108,7 @@ const SignUpPage = () => {
                                 {showPassword ? <FaEyeSlash /> : <FaEye />}
                             </span>
                         </div>
-                        {passwordError && <p style={{ color: 'red', fontSize: '12px' }}>{passwordError}</p>} {/* Password error displayed here */}
+                        {passwordError && <p style={{ color: 'red', fontSize: '12px' }}>{passwordError}</p>} 
                     </div>
                     <div>
                         <label>Confirm Password</label>
@@ -122,7 +123,7 @@ const SignUpPage = () => {
                                 {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
                             </span>
                         </div>
-                        {confirmPasswordError && <p style={{ color: 'red', fontSize: '12px' }}>{confirmPasswordError}</p>} {/* Confirm password error displayed here */}
+                        {confirmPasswordError && <p style={{ color: 'red', fontSize: '12px' }}>{confirmPasswordError}</p>} 
                     </div>
                     <div className='form-button'>
                         <button type="submit">Sign Up</button>

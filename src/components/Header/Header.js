@@ -27,7 +27,7 @@ const Header = () => {
         <div className="logo-container">
           <img src={logo} alt="School Logo" className="header-logo" />
           <img src={PrimaryLogo} alt="School Logo" className="header-logo" />
-          <p>JSc OWERRI</p>
+          <p>JCs OWERRI</p>
 
           <div className="info-container">
             <div className="info">

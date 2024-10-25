@@ -121,3 +121,29 @@ button:hover {
     background-color: #0056b3;
 }
 
+.password-input-container {
+    position: relative; 
+    width: 100%;
+}
+
+.password-input-container input {
+    width: 100%;
+    padding-right: 40px; 
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.password-input-container > .password-toggle-icon {
+    position: absolute;
+    top: 55%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: gray;
+}
+
+.password-input-container > .password-toggle-icon:hover {
+    color: #007BFF;
+}

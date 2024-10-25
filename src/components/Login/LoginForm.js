@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'; // Import Firebase auth
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'; 
 import './loginform.css';
 import logo from '../../images/logo.png';
+import { FaEye, FaEyeSlash } from 'react-icons/fa'; 
 
 const LoginForm = () => {
-    const [email, setEmail] = useState(''); // Changed from username to email
+    const [email, setEmail] = useState(''); 
     const [password, setPassword] = useState('');
-    const [error, setError] = useState(''); // Added state for error handling
+    const [error, setError] = useState(''); 
     const navigate = useNavigate();
+    const [showPassword, setShowPassword] = useState(false);
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -35,28 +40,32 @@ const LoginForm = () => {
                 </div>
                 <h2>Welcome <span>Back</span></h2>
                 <p>Login to access portal</p>
-                {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>} {/* Display error if login fails */}
+                {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>} 
                 <form onSubmit={handleSubmit}>
                     <div>
-                        <label>Email</label> {/* Updated label to 'Email' */}
+                        <label>Email</label> 
                         <input
-                            type="email" // Updated input type to 'email'
+                            type="email" 
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="Enter your email"
                             required
                         />
                     </div>
-                    <div>
+                    <div className='password-input-container'>
                         <label>Password</label>
                         <input
-                            type="password"
+                            type={showPassword ? "text" : "password"} 
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             placeholder="Enter your password"
                             required
                         />
+                        <span onClick={togglePasswordVisibility} className="password-toggle-icon">
+                            {showPassword ? <FaEyeSlash /> : <FaEye />}
+                        </span>
                     </div>
+
                     <div className='page-button'>
                         <button type="submit">Login</button>
                     </div>

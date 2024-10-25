@@ -5,6 +5,7 @@ import { auth } from '../../firebaseConfig';
 import { getDatabase, ref, onValue } from "firebase/database"; 
 import { signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';  
+import SchoolFees from '../SchoolFees/SchoolFees';
 
 // Component to display the greeting
 const DashboardGreeting = ({ userData }) => {
@@ -146,7 +147,7 @@ export const Widget = () => {
         {
             title: "School Fees",
             icon: <FaMoneyBillAlt />,
-            content: "This is still under development"
+            content: <SchoolFees userData={userData} />
         },
         {
             title: "Log Out",
