@@ -1,6 +1,6 @@
 .page {
   width: 100%;
-  height: 220vh;
+  height: auto;
 }
 
 .tab-container {
@@ -60,6 +60,8 @@
   max-width: 150px;
   padding: 0.7rem 0.5rem;
   height: 100vh;
+  top: 0;
+  left: 0;
 }
 
 .buttons > button {
@@ -164,6 +166,10 @@
   text-transform: capitalize;
 }
 
+.term-buttons {
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .term-buttons > button {
   padding: 10px 15px;
   margin: 5px;
@@ -187,6 +193,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  display: block;
 }
 
 th,
@@ -243,7 +250,7 @@ tr:nth-child(even) td {
 
 @media (max-width: 768px) {
   .tab-container > div:last-child {
-    margin-left: 2.5rem;
+    margin-left: 2rem;
   }
   .profile-image {
     width: 50px;
@@ -251,8 +258,9 @@ tr:nth-child(even) td {
   }
   .buttons {
     max-width: 100%;
-    white-space: nowrap;
+
     align-items: center;
+    height: 100dvh;
   }
 
   .tab-title {
@@ -288,7 +296,9 @@ tr:nth-child(even) td {
     height: auto;
     padding: 0.5rem;
   }
-
+  #result-to-download {
+    overflow-y: auto;
+  }
   .student-info {
     flex-direction: column;
   }
@@ -297,5 +307,7 @@ tr:nth-child(even) td {
     padding: 0.5rem;
     font-size: 10px;
     height: auto;
+  }
+  table {
   }
 }
