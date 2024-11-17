@@ -69,7 +69,7 @@ const Header = () => {
               <li><a href="#footer">Contact Us</a></li>
               <li><a href="#about-us">About Us</a></li>
               <li><a href="#contact-us">Book an Appointment</a></li>
-              <li><Link to="/signup" id='school-portal'>School portal <span><FaExternalLinkAlt /></span></Link></li>
+              <li><Link to="/signup" id='school-portal'>Sign Up <span><FaExternalLinkAlt /></span></Link></li>
             </ul>
           </nav>
       </div>

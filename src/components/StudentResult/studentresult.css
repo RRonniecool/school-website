@@ -1,0 +1,78 @@
+.student-resultpage {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding: 0.3rem;
+}
+.student-resultpage > h3 {
+  text-align: center;
+}
+.assignment-input,
+.test-input,
+.exam-input {
+  padding: 2px 4px;
+  border: 1px solid #ccc;
+  width: 90px;
+}
+.term-buttons,
+.changes {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+button {
+  margin: 0.5rem;
+  background: #ffea00;
+  color: #0b0b33;
+  border: none;
+  border-radius: 5px;
+  padding: 0.3rem;
+  font-weight: bold;
+}
+.teacher-remark {
+  margin-top: 20px;
+  display: flex;
+}
+
+.teacher-remark textarea {
+  width: 100%;
+  height: 100px;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.teacher-remark h4 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.teacher-remark p {
+  font-size: 16px;
+  color: #555;
+}
+
+@media (max-width: 600px) {
+  .assignment-input,
+  .test-input,
+  .exam-input {
+    padding: 1px 2px;
+    font-size: 14px;
+    width: 60px;
+  }
+
+  .assignment-header,
+  .test-header,
+  .exam-header {
+    font-size: 14px;
+    padding: 4px;
+  }
+
+  .assignment-cell,
+  .test-cell,
+  .exam-cell {
+    padding: 2px 4px;
+  }
+}

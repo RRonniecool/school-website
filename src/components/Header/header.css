@@ -1,253 +1,247 @@
 /* General Styles */
 header {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 12;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 12;
 }
 
 .school-info {
-    display: flex;
-    gap: 0.7rem;
-    background-color: #0B0B33;
-    padding: 0rem 0rem 0rem 3rem;
-    align-items: center;
-    margin: 0;
-   
+  display: flex;
+  gap: 0.7rem;
+  background-color: #0b0b33;
+  padding: 0rem 0rem 0rem 3rem;
+  align-items: center;
+  margin: 0;
 }
 
 .school-info > p {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: white;
 }
 
 .school-info > p span {
-    margin-right: 0.3rem;
-    color: #FFEA00;
+  margin-right: 0.3rem;
+  color: #ffea00;
 }
 
 .school-personal-info {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo-container {
-    display: flex;
-    align-items: center;
-    padding: 0rem 0rem 0rem 3rem;
-    background-color: whitesmoke;
-    margin: 0;
+  display: flex;
+  align-items: center;
+  padding: 0rem 0rem 0rem 3rem;
+  background-color: whitesmoke;
+  margin: 0;
 }
 
 .header-logo {
-    width: 4rem;
-    height: 4rem;
+  width: 4rem;
+  height: 4rem;
 }
 
-.info-container{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-left: 4rem;
+.info-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 4rem;
 }
 
-.info{
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .info > span {
-    border: 1px solid grey;   
-    border-radius: 50%;       
-    padding: 0.5rem;          
-    display: inline-flex;     
-    align-items: center;      
-    justify-content: center;  
-    width: 30px;              
-    height: 30px;             
-    color: #191970;              
-    font-size: 1rem;          
+  border: 1px solid grey;
+  border-radius: 50%;
+  padding: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: #191970;
+  font-size: 1rem;
 }
 
-
-.info div{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.1rem;
+.info div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
 }
 
-.info div > p{
-    font-size: 0.8rem;
-    margin: 0;
-    font-weight: bold;
+.info div > p {
+  font-size: 0.8rem;
+  margin: 0;
+  font-weight: bold;
 }
 
-.info div > small{
-    margin: 0;
-    font-size: 0.65rem;
+.info div > small {
+  margin: 0;
+  font-size: 0.65rem;
 }
 
-.school-nav{
-    display: flex;
-    list-style-type: none;
-    align-items: center;
-    background-color: #0B0B33;
-    justify-content: center;
+.school-nav {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  background-color: #0b0b33;
+  justify-content: center;
 }
 
 .school-nav > ul {
-    display: flex;
-    flex-direction: row;
-    gap: 2.5rem;
-    list-style-type: none;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  list-style-type: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 
 .school-nav > ul li a {
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
-    position: relative;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  position: relative;
 }
 
 .school-nav ul li a:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 .school-nav ul li a::after {
-    content: "";
-    position: absolute;
-    bottom: -0.2em;
-    left: 0;
-    width: 0;
-    border-radius: 3px;
-    height: 3px;
-    background: #6c9711; 
-    transition: all .4s ease-in-out;
+  content: "";
+  position: absolute;
+  bottom: -0.2em;
+  left: 0;
+  width: 0;
+  border-radius: 3px;
+  height: 3px;
+  background: #6c9711;
+  transition: all 0.4s ease-in-out;
 }
 
-
-.school-nav ul li:last-child a{
-    color: black;
-    display: flex; 
-    align-items: center; 
-    background-color: #FFEA00;
-    padding: 0.2rem 0.9rem;
-    border-radius: 15px;
-    margin-left: 8rem;
+.school-nav ul li:last-child a {
+  color: black;
+  display: flex;
+  align-items: center;
+  background-color: #ffea00;
+  padding: 0.2rem 0.9rem;
+  border-radius: 15px;
+  margin-left: 8rem;
 }
 
-#school-portal:hover{
-    background-color: white;
+#school-portal:hover {
+  background-color: white;
 }
 
 #school-portal:hover::after {
-    width: 0 !important;  
+  width: 0 !important;
 }
 
 #school-portal::after {
-    content: none !important;  
+  content: none !important;
 }
 
-.school-nav ul li:last-child a span{
-    margin-left: 8px; 
-    display: flex;
-    align-items: center; 
+.school-nav ul li:last-child a span {
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
 }
-
 
 .hamburger-icon {
-    display: none;
+  display: none;
 }
 
 /* Mobile View */
 @media (max-width: 768px) {
+  .school-info {
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    gap: 0.5em;
+    flex-direction: column;
+    padding: 0.5em 0;
+  }
 
-    .school-info {
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-        gap: 0.5em;
-        flex-direction: column;
-        padding: 0.5em 0;
-    }
+  .school-info > p {
+    margin: 0;
+  }
 
-    .school-info > p{
-        margin: 0;
-    }
+  .info-container {
+    display: none;
+  }
 
-    .info-container {
-        display: none; 
-    }
+  .school-personal-info {
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1.5rem;
+    flex-direction: row;
+    position: relative;
+    background-color: white;
+  }
 
-    .school-personal-info {
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.5rem 1.5rem;
-        flex-direction: row;
-        position: relative;
-        background-color: white;
-    }
+  .logo-container {
+    background-color: white;
+    padding: 0;
+  }
 
-    .logo-container{
-        background-color: white;
-        padding: 0;
-    }
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+  }
 
-    .mobile-nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-end;
-        position: relative;
-    }
+  .hamburger-icon {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
 
-    .hamburger-icon {
-        display: block;
-        font-size: 1.5rem;
-        cursor: pointer;
-    }
+  .school-nav {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    background-color: #0b0b33;
+    padding: 0.5rem;
+    left: 0;
+    width: 100%;
+    transition: top 0.3s ease-in;
+    z-index: 12;
+  }
 
-    .school-nav {
-        position: absolute;
-        display: none;
-        flex-direction: column;
-        background-color: #0B0B33;
-        padding: 1rem;
-        left: 0;
-        width: 100%;
-        transition: top 0.3s ease-in;
-        z-index: 12;
-    }
+  .school-nav.open {
+    display: flex;
+    top: 100%;
+  }
 
-    .school-nav.open {
-        display: flex;
-        top: 100%;
-    }
+  .school-nav ul {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 
-    .school-nav ul {
-        flex-direction: column;
-    }
+  .school-nav ul li a {
+    color: white;
+    padding: 0.5rem 0;
+  }
 
-    .school-nav ul li a {
-        color: white;
-        padding: 0.5rem 0;
-    }
-
-    .school-nav ul li:last-child a{
-        margin-left: 0;
-    }
+  .school-nav ul li:last-child a {
+    margin-left: 0;
+  }
 }
-
-

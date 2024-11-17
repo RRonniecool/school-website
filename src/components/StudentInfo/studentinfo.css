@@ -1,0 +1,9 @@
+.student-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 110vh;
+}
+.student-page > h3 {
+  margin-top: 0.5rem;
+}
