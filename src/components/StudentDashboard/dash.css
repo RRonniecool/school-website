@@ -251,6 +251,7 @@ tr:nth-child(even) td {
 @media (max-width: 768px) {
   .tab-container > div:last-child {
     margin-left: 2rem;
+    overflow-y: scroll;
   }
   .profile-image {
     width: 50px;
@@ -258,9 +259,8 @@ tr:nth-child(even) td {
   }
   .buttons {
     max-width: 100%;
-
     align-items: center;
-    height: 100dvh;
+    height: 100svh;
   }
 
   .tab-title {
@@ -277,12 +277,12 @@ tr:nth-child(even) td {
     display: block;
   }
   .top-section {
-    gap: 1.5rem;
+    gap: 1rem;
     align-items: flex-end;
   }
 
   .greeting > h2 {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .content {
@@ -307,7 +307,5 @@ tr:nth-child(even) td {
     padding: 0.5rem;
     font-size: 10px;
     height: auto;
-  }
-  table {
   }
 }

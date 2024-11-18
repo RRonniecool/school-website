@@ -81,6 +81,7 @@ const DashboardTabContent = ({ userData }) => {
 
 const ResultTabContent = ({ term, setTerm, studentData, allStudents = [] }) => {
   const [showCumulative, setShowCumulative] = useState(false);
+
   const subjects = [
     "mathematics",
     "english",
@@ -105,12 +106,15 @@ const ResultTabContent = ({ term, setTerm, studentData, allStudents = [] }) => {
     const cumulativeResults = {};
 
     subjects.forEach((subject) => {
-      const firstTerm = studentData?.subjects?.[subject]?.firstTerm?.total || 0;
-      const secondTerm =
+      const firstTermTotal =
+        studentData?.subjects?.[subject]?.firstTerm?.total || 0;
+      const secondTermTotal =
         studentData?.subjects?.[subject]?.secondTerm?.total || 0;
-      const thirdTerm = studentData?.subjects?.[subject]?.thirdTerm?.total || 0;
+      const thirdTermTotal =
+        studentData?.subjects?.[subject]?.thirdTerm?.total || 0;
+
       cumulativeResults[subject] = (
-        (firstTerm + secondTerm + thirdTerm) /
+        (firstTermTotal + secondTermTotal + thirdTermTotal) /
         3
       ).toFixed(2);
     });
@@ -118,56 +122,51 @@ const ResultTabContent = ({ term, setTerm, studentData, allStudents = [] }) => {
     return cumulativeResults;
   };
 
-  const cumulativeResults = calculateCumulativeResults();
+  const calculateOverallCumulativeResult = () => {
+    const totalCumulative = subjects.reduce((total, subject) => {
+      const firstTermTotal =
+        studentData?.subjects?.[subject]?.firstTerm?.total || 0;
+      const secondTermTotal =
+        studentData?.subjects?.[subject]?.secondTerm?.total || 0;
+      const thirdTermTotal =
+        studentData?.subjects?.[subject]?.thirdTerm?.total || 0;
 
-  // Calculate the term average for the student
-  // Calculate the term average for the student
+      return total + firstTermTotal + secondTermTotal + thirdTermTotal;
+    }, 0);
+
+    return (totalCumulative / (subjects.length * 3)).toFixed(2);
+  };
+
   const calculateTermAverage = () => {
+    const termKey = ["firstTerm", "secondTerm", "thirdTerm"][term];
     const termTotal = subjects.reduce((total, subject) => {
       const assignment =
-        studentData?.subjects?.[subject]?.[
-          `${["firstTerm", "secondTerm", "thirdTerm"][term]}`
-        ]?.assignment || 0;
-      const test =
-        studentData?.subjects?.[subject]?.[
-          `${["firstTerm", "secondTerm", "thirdTerm"][term]}`
-        ]?.test || 0;
-      const exam =
-        studentData?.subjects?.[subject]?.[
-          `${["firstTerm", "secondTerm", "thirdTerm"][term]}`
-        ]?.exam || 0;
+        studentData?.subjects?.[subject]?.[termKey]?.assignment || 0;
+      const test = studentData?.subjects?.[subject]?.[termKey]?.test || 0;
+      const exam = studentData?.subjects?.[subject]?.[termKey]?.exam || 0;
 
-      const subjectTotal = assignment + test + exam;
-      return total + subjectTotal;
+      return total + assignment + test + exam;
     }, 0);
 
     return (termTotal / subjects.length).toFixed(2);
   };
 
-  const termAverage = calculateTermAverage();
-
-  // Determine the student's position by sorting all students based on their term average
   const calculatePosition = () => {
     if (!allStudents || allStudents.length === 0) return "N/A";
 
-    // Map each student to their term average
+    const termKey = ["firstTerm", "secondTerm", "thirdTerm"][term];
     const studentsWithAverages = allStudents.map((student) => ({
       ...student,
       termAverage:
         subjects.reduce(
           (total, subject) =>
-            total +
-            (student.subjects?.[subject]?.[
-              `${["firstTerm", "secondTerm", "thirdTerm"][term]}`
-            ]?.total || 0),
+            total + (student.subjects?.[subject]?.[termKey]?.total || 0),
           0
         ) / subjects.length,
     }));
 
-    // Sort by term average in descending order
     studentsWithAverages.sort((a, b) => b.termAverage - a.termAverage);
 
-    // Find this student's position
     const position =
       studentsWithAverages.findIndex(
         (student) =>
@@ -178,6 +177,9 @@ const ResultTabContent = ({ term, setTerm, studentData, allStudents = [] }) => {
     return position;
   };
 
+  const cumulativeResults = calculateCumulativeResults();
+  const overallCumulativeResult = calculateOverallCumulativeResult();
+  const termAverage = calculateTermAverage();
   const position = calculatePosition();
 
   return (
@@ -202,12 +204,10 @@ const ResultTabContent = ({ term, setTerm, studentData, allStudents = [] }) => {
 
       <h2>
         {showCumulative
-          ? "Cumulative Result"
+          ? `Cumulative Result: ${overallCumulativeResult}`
           : `Your ${["First", "Second", "Third"][term]} Term Result`}
-        :
       </h2>
       <div id="result-to-download">
-        {" "}
         <table>
           <tbody>
             <tr>
@@ -221,12 +221,10 @@ const ResultTabContent = ({ term, setTerm, studentData, allStudents = [] }) => {
               <th>Class</th>
               <td>{studentData?.class || "N/A"}</td>
             </tr>
-            {/* Add row for Term Average */}
             <tr>
               <th>Term Average</th>
               <td>{termAverage}</td>
             </tr>
-            {/* Add row for Position */}
             <tr>
               <th>Position</th>
               <td>{position}</td>
@@ -246,12 +244,8 @@ const ResultTabContent = ({ term, setTerm, studentData, allStudents = [] }) => {
 
             {subjects.map((subject, index) => (
               <tr key={index}>
-                <td>
-                  {subject
-                    .replace(/_/g, "/") // Display subject with slashes instead of underscores
-                    .charAt(0)
-                    .toUpperCase() + subject.replace(/_/g, "/").slice(1)}
-                </td>
+                {/* Display subject with slashes instead of underscores */}
+                <td>{subject.replace(/_/g, "/")}</td>
                 {showCumulative ? (
                   <>
                     <td colSpan="3">Cumulative Average</td>
@@ -259,8 +253,8 @@ const ResultTabContent = ({ term, setTerm, studentData, allStudents = [] }) => {
                   </>
                 ) : (
                   <>
+                    {/* Replace slashes with underscores when accessing the data */}
                     <td>
-                      {/* Replace slashes with underscores when accessing the data */}
                       {studentData?.subjects?.[subject.replace(/\//g, "_")]?.[
                         ["firstTerm", "secondTerm", "thirdTerm"][term]
                       ]?.assignment || "N/A"}
@@ -291,16 +285,15 @@ const ResultTabContent = ({ term, setTerm, studentData, allStudents = [] }) => {
               </tr>
             ))}
           </tbody>
-
-          <div className="teacher-remarktext">
-            <h4>Teacher's Remark:</h4>
-            <p>
-              {studentData?.remarks?.[
-                ["firstTerm", "secondTerm", "thirdTerm"][term]
-              ] || "No remark available."}
-            </p>
-          </div>
         </table>
+        <div className="teacher-remarktext">
+          <h4>Teacher's Remark:</h4>
+          <p>
+            {studentData?.remarks?.[
+              ["firstTerm", "secondTerm", "thirdTerm"][term]
+            ] || "No remark available."}
+          </p>
+        </div>
       </div>
       <div
         style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
@@ -322,13 +315,42 @@ export const Widget = () => {
   const [userData, setUserData] = useState(
     JSON.parse(localStorage.getItem("userData")) || null
   );
+  const [allStudents, setAllStudents] = useState([]); // State to store all students
   const [loading, setLoading] = useState(!userData);
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Fetch all students when the component mounts
+    const fetchAllStudents = () => {
+      const db = getDatabase();
+      const studentsRef = ref(db, "students/");
+
+      onValue(
+        studentsRef,
+        (snapshot) => {
+          const data = snapshot.val();
+          if (data) {
+            const studentsArray = Object.keys(data).map((key) => ({
+              ...data[key],
+              id: key, // Add the Firebase key as an ID
+            }));
+            setAllStudents(studentsArray); // Set all students to state
+          } else {
+            console.log("No students data found");
+          }
+        },
+        (error) => {
+          console.error("Error fetching all students: ", error);
+        }
+      );
+    };
+
+    fetchAllStudents();
+  }, []); // Only runs on mount
+
+  useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        // Fetch user data if a user is logged in
         const userId = user.uid;
         const db = getDatabase();
         const userRef = ref(db, `users/${userId}`);
@@ -339,13 +361,11 @@ export const Widget = () => {
             setUserData(data);
             localStorage.setItem("userData", JSON.stringify(data));
           } else {
-            console.log("No user data found, redirecting to login.");
             navigate("/login");
           }
           setLoading(false);
         });
       } else {
-        // Navigate to login if no user is found
         navigate("/login");
       }
     });
@@ -372,17 +392,18 @@ export const Widget = () => {
     {
       title: "Dashboard",
       icon: <FaHome />,
-      content: (
-        <>
-          <DashboardTabContent userData={userData} loading={loading} />
-        </>
-      ),
+      content: <DashboardTabContent userData={userData} loading={loading} />,
     },
     {
       title: "Results",
       icon: <FaBook />,
       content: (
-        <ResultTabContent term={0} setTerm={setTerm} studentData={userData} />
+        <ResultTabContent
+          term={term}
+          setTerm={setTerm}
+          studentData={userData}
+          allStudents={allStudents} // Pass allStudents to ResultTabContent
+        />
       ),
     },
     {
@@ -396,9 +417,7 @@ export const Widget = () => {
       onClick: () => handleLogOut(),
     },
   ];
-  if (loading) {
-    return <div class="spinner"></div>;
-  }
+
   return (
     <section className="page">
       <div className="tab-container">
