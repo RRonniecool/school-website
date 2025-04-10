@@ -13,8 +13,8 @@ const HomePage = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 28800000);
-
+    }, 8000); 
+// 28800000;
     return () => clearTimeout(timer);
   }, []);
 
